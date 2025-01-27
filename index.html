@@ -18,7 +18,21 @@
       color: #333;
     }
 
-    /* Header and Navigation */
+    /* Header for Logo Centered */
+    .header-logo {
+      background-color: #202020;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center; /* Centers the logo horizontally */
+      align-items: center;
+    }
+
+    .header-logo img {
+      width: 100px; /* Adjust the size of your logo */
+      height: auto;
+    }
+
+    /* Header and Navigation (Second Header) */
     header {
       background-color: #202020;
       color: #fff;
@@ -31,12 +45,6 @@
     header h1 {
       font-size: 32px;
       margin-right: 20px;
-    }
-
-    /* Logo Section */
-    .logo {
-      width: 50px; /* Adjust the size of your logo */
-      height: auto;
     }
 
     nav {
@@ -153,10 +161,14 @@
   </style>
 </head>
 <body>
-  <!-- Header Section -->
+  <!-- First Header (Logo Only) -->
+  <div class="header-logo">
+    <img src="https://via.placeholder.com/100" alt="Realgreenheart Logo"> <!-- Replace with your actual logo -->
+  </div>
+
+  <!-- Second Header (Title and Navigation) -->
   <header>
-    <img class="logo" src="https://imgur.com/seiA8a5" alt="Logo"> <!-- Your logo here -->
-   <header>
+    <h1>Realgreenheart</h1>
     <nav>
       <a href="#">Home</a>
       <a href="#">Comics</a>
