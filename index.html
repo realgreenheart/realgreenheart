@@ -219,3 +219,24 @@
 
   <script>
     // Array of banner images
+    const images = [
+      "https://i.imgur.com/JgoWmnX.jpg", // First image (your provided URL)
+      "https://i.imgur.com/6alarZY.jpg"  // Second image (your provided URL)
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeBannerImage() {
+      const banner = document.getElementById("banner");
+      banner.style.backgroundImage = `url(${images[currentImageIndex]})`;
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+
+    // Change image every 5 seconds
+    setInterval(changeBannerImage, 5000);
+
+    // Initialize the first image
+    changeBannerImage();
+  </script>
+</body>
+</html>
