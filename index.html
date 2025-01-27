@@ -219,25 +219,3 @@
 
   <script>
     // Array of banner images
-    const images = [
-      "https://via.placeholder.com/1920x400/FF6347/FFFFFF?text=Image+1",  // Replace with actual image URLs
-      "https://via.placeholder.com/1920x400/4682B4/FFFFFF?text=Image+2",
-      "https://via.placeholder.com/1920x400/32CD32/FFFFFF?text=Image+3"
-    ];
-
-    let currentImageIndex = 0;
-
-    function changeBannerImage() {
-      const banner = document.getElementById("banner");
-      banner.style.backgroundImage = `url(${images[currentImageIndex]})`;
-      currentImageIndex = (currentImageIndex + 1) % images.length;
-    }
-
-    // Change image every 5 seconds
-    setInterval(changeBannerImage, 5000);
-
-    // Initialize the first image
-    changeBannerImage();
-  </script>
-</body>
-</html>
