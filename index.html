@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comics Layout Clone</title>
+  <title>Marvel-Inspired Layout</title>
   <style>
     * {
       margin: 0;
@@ -17,6 +17,7 @@
       color: #333;
     }
 
+    /* Header and Navigation */
     header {
       background-color: #202020;
       color: #fff;
@@ -45,10 +46,11 @@
       text-decoration: underline;
     }
 
+    /* Main Banner */
     .banner {
       background-color: #444;
       color: #fff;
-      padding: 40px;
+      padding: 50px 20px;
       text-align: center;
     }
 
@@ -61,28 +63,21 @@
       font-size: 18px;
     }
 
-    .filter-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sections */
+    .section {
+      margin: 40px 20px;
+    }
+
+    .section h2 {
+      font-size: 28px;
       margin-bottom: 20px;
     }
 
-    .filter-bar select, .filter-bar input {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
+    /* Grid Layout */
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      padding: 20px;
     }
 
     .grid-item {
@@ -91,7 +86,6 @@
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      padding: 10px;
     }
 
     .grid-item img {
@@ -107,13 +101,24 @@
     .grid-item p {
       font-size: 14px;
       color: #666;
+      padding: 0 10px 10px;
     }
 
+    /* Footer */
     footer {
       background-color: #202020;
       color: #fff;
       padding: 20px;
       text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -126,50 +131,66 @@
       <a href="#">Comics</a>
       <a href="#">Characters</a>
       <a href="#">Movies</a>
-      <a href="#">About</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Games</a>
+      <a href="#">More</a>
     </nav>
   </header>
 
-  <!-- Banner Section -->
+  <!-- Main Banner -->
   <div class="banner">
-    <h2>Featured Comics</h2>
-    <p>This is a banner section for highlighting important content.</p>
+    <h2>Main Banner Title</h2>
+    <p>This is the main banner description where you can highlight your featured content.</p>
   </div>
 
-  <!-- Filter Bar -->
-  <div class="filter-bar">
-    <select>
-      <option value="">Sort by Release Date</option>
-      <option value="new">Newest</option>
-      <option value="popular">Most Popular</option>
-    </select>
-    <input type="text" placeholder="Search Comics...">
+  <!-- Latest Section -->
+  <div class="section">
+    <h2>The Latest</h2>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Latest Comic 1</h3>
+        <p>Short description of the latest comic or content.</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Latest Comic 2</h3>
+        <p>Short description of the latest comic or content.</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Latest Comic 3</h3>
+        <p>Short description of the latest comic or content.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- Grid Section -->
-  <div class="grid-container">
-    <!-- Example Grid Items -->
-    <div class="grid-item">
-      <img src="https://via.placeholder.com/200x300" alt="Placeholder Image">
-      <h3>Comic Title</h3>
-      <p>Description of the comic goes here.</p>
+  <!-- Trailers & Extras Section -->
+  <div class="section">
+    <h2>Trailers & Extras</h2>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Trailer 1</h3>
+        <p>Watch the latest trailer for an upcoming comic or movie.</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Trailer 2</h3>
+        <p>Watch the latest trailer for an upcoming comic or movie.</p>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+        <h3>Trailer 3</h3>
+        <p>Watch the latest trailer for an upcoming comic or movie.</p>
+      </div>
     </div>
-    <div class="grid-item">
-      <img src="https://via.placeholder.com/200x300" alt="Placeholder Image">
-      <h3>Comic Title</h3>
-      <p>Description of the comic goes here.</p>
-    </div>
-    <div class="grid-item">
-      <img src="https://via.placeholder.com/200x300" alt="Placeholder Image">
-      <h3>Comic Title</h3>
-      <p>Description of the comic goes here.</p>
-    </div>
-    <!-- Add more items as needed -->
   </div>
 
   <!-- Footer Section -->
   <footer>
-    <p>&copy; 2025 Your Website Name. All rights reserved.</p>
+    <p>&copy; 2025 Realgreenheart. All rights reserved.</p>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
   </footer>
 </body>
 </html>
