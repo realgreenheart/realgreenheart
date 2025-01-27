@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processing Login</title>
+</head>
+<body>
+  <h1>Processing Authentication...</h1>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const authCode = urlParams.get('code');
+
+    if (authCode) {
+      // Send the authorization code to the backend for processing
+      fetch('https://your-backend-server.com/authenticate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ code: authCode })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Save the session token and redirect to the protected content page
+          localStorage.setItem('authToken', data.token);
+          window.location.href = '/dashboard.html';
+        } else {
+          alert("Authentication failed. Please try again.");
+          window.location.href = '/login.html';
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("An error occurred during login.");
+        window.location.href = '/login.html';
+      });
+    } else {
+      alert("Authorization code not found. Please log in again.");
+      window.location.href = '/login.html';
+    }
+  </script>
+</body>
+</html>
