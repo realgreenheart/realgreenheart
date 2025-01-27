@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login to Access Content</h1>
+  <button onclick="loginWithPatreon()">Login with Patreon</button>
+  <script>
+    function loginWithPatreon() {
+      const clientId = "YOUR_PATREON_CLIENT_ID"; // Replace with your actual Patreon Client ID
+      const redirectUri = "https://realgreenheart.github.io/callback.html"; // URL of your callback page
+      const patreonAuthUrl = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=identity.memberships`;
+
+      window.location.href = patreonAuthUrl;
+    }
+  </script>
+</body>
+</html>
