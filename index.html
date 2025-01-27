@@ -30,7 +30,13 @@
 
     header h1 {
       font-size: 32px;
-      margin-right: 20px; /* Space between title and nav links */
+      margin-right: 20px;
+    }
+
+    /* Logo Section */
+    .logo {
+      width: 50px; /* Adjust the size of your logo */
+      height: auto;
     }
 
     nav {
@@ -128,36 +134,6 @@
       font-size: 20px;
     }
 
-    /* Dropdown Filter (Character Pop-Up) */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #ddd;
-    }
-
     /* Footer Section */
     footer {
       background-color: #202020;
@@ -179,6 +155,7 @@
 <body>
   <!-- Header Section -->
   <header>
+    <img class="logo" src="https://imgur.com/seiA8a5" alt="Logo"> <!-- Your logo here -->
     <h1>Realgreenheart</h1>
     <nav>
       <a href="#">Home</a>
