@@ -5,97 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Website - Home</title>
-    <style>
-        /* Reset some default browser styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            padding: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            text-align: center;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        h1, h2, h3 {
-            color: #333;
-        }
-
-        h1 {
-            margin-top: 50px;
-            font-size: 3rem;
-        }
-
-        h2 {
-            margin-top: 30px;
-            font-size: 2.5rem;
-        }
-
-        .service, .portfolio-item {
-            background-color: white;
-            padding: 20px;
-            margin: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        section {
-            padding: 40px 0;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        form button {
-            background-color: #333;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -110,44 +20,29 @@
     </header>
 
     <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1>Welcome to Our Website</h1>
-            <p>Your go-to place for amazing services and creative work.</p>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="service">
-                <h3>Web Design</h3>
-                <p>We create beautiful and functional websites tailored to your needs.</p>
-            </div>
-            <div class="service">
-                <h3>App Development</h3>
-                <p>Mobile app development that helps you connect with your audience.</p>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
         <section id="portfolio">
-            <h2>Our Work</h2>
-            <div class="portfolio-item">
-                <img src="example-image.jpg" alt="Project Example">
-                <h3>Project Name</h3>
-                <p>Short description of the project.</p>
-            </div>
-        </section>
+            <div class="portfolio-container">
+                <!-- Portfolio Item Start -->
+                <div class="portfolio-item">
+                    <div class="portfolio-image gray-overlay">
+                        <a href="#">
+                            <img src="image1.jpg" alt="Project 1">
+                        </a>
+                        <div class="bg-overlay">
+                            <a href="#" class="overlay-trigger-icon"><i class="fa-brands fa-patreon"></i></a>
+                            <div class="bg-overlay-bg"></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-desc">
+                        <h3><a href="#">Project 1 Title</a></h3>
+                        <p>Description of project 1</p>
+                    </div>
+                </div>
+                <!-- Portfolio Item End -->
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="#">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+                <!-- More portfolio items here... -->
+
+            </div>
         </section>
     </main>
 
@@ -156,3 +51,105 @@
     </footer>
 </body>
 </html>
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Portfolio Grid */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    position: relative;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-image:hover .bg-overlay {
+    opacity: 1;
+}
+
+.portfolio-desc {
+    padding: 15px;
+    background-color: #f4f4f4;
+}
+
+.portfolio-desc h3 {
+    font-size: 1.2rem;
+}
+
+.portfolio-desc p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+
