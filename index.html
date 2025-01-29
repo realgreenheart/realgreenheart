@@ -1,170 +1,244 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>New Website - Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Reset some default browser styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realgreenheart</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
 
-        header {
-            background-color: #333;
-            padding: 1rem;
-        }
+    /* Header for Logo Centered */
+    .header-logo {
+      background-color: #202020;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center; /* Centers the logo horizontally */
+      align-items: center;
+    }
 
-        nav ul {
-            list-style: none;
-            text-align: center;
-        }
+    .header-logo img {
+      width: 100px; /* Adjust the size of your logo */
+      height: auto;
+    }
 
-        nav ul li {
-            display: inline-block;
-            margin: 0 20px;
-        }
+    /* Second Header (Navigation Only) */
+    header {
+      background-color: #202020;
+      color: #fff;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center; /* Centers the header content horizontally */
+      align-items: center;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
+    nav {
+      display: flex;
+      gap: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-        /* Portfolio Grid */
-        .portfolio-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-        .portfolio-item {
-            width: 250px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+    /* Main Banner Section */
+    .banner {
+      background-color: #333;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
 
-        .portfolio-image {
-            position: relative;
-        }
+    .banner h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
 
-        .portfolio-image img {
-            width: 100%;
-            height: auto;
-        }
+    .banner p {
+      font-size: 18px;
+    }
 
-        .bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+    /* Sections */
+    .section {
+      margin: 40px 20px;
+    }
 
-        .portfolio-image:hover .bg-overlay {
-            opacity: 1;
-        }
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
 
-        .portfolio-desc {
-            padding: 15px;
-            background-color: #f4f4f4;
-        }
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-        .portfolio-desc h3 {
-            font-size: 1.2rem;
-        }
+    .grid-item {
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
 
-        .portfolio-desc p {
-            font-size: 0.9rem;
-            color: #555;
-        }
+    .grid-item img {
+      width: 100%;
+      height: auto;
+    }
 
-    </style>
+    .grid-item h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .grid-item p {
+      font-size: 14px;
+      color: #666;
+      padding: 0 10px 10px;
+    }
+
+    /* Hover Effect */
+    .grid-item:hover .info {
+      opacity: 1;
+    }
+
+    .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .info h3 {
+      font-size: 20px;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #202020;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- First Header (Logo Only) -->
+  <div class="header-logo">
+    <img src="https://imgur.com/seiA8a5.jpg" alt="Realgreenheart Logo"> <!-- Your logo added here -->
+  </div>
 
-    <main>
-        <section id="portfolio">
-            <div class="portfolio-container">
-                <!-- Portfolio Item Start -->
-                <div class="portfolio-item">
-                    <div class="portfolio-image gray-overlay">
-                        <a href="#">
-                            <img src="image1.jpg" alt="Project 1">
-                        </a>
-                        <div class="bg-overlay">
-                            <a href="#" class="overlay-trigger-icon"><i class="fa-brands fa-patreon"></i></a>
-                            <div class="bg-overlay-bg"></div>
-                        </div>
-                    </div>
-                    <div class="portfolio-desc">
-                        <h3><a href="#">Project 1 Title</a></h3>
-                        <p>Description of project 1</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item End -->
+  <!-- Second Header (Navigation Only) -->
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Comics</a>
+      <a href="#">Characters</a>
+    </nav>
+  </header>
 
-                <!-- More portfolio items here -->
-                <div class="portfolio-item">
-                    <div class="portfolio-image gray-overlay">
-                        <a href="#">
-                            <img src="image2.jpg" alt="Project 2">
-                        </a>
-                        <div class="bg-overlay">
-                            <a href="#" class="overlay-trigger-icon"><i class="fa-brands fa-patreon"></i></a>
-                            <div class="bg-overlay-bg"></div>
-                        </div>
-                    </div>
-                    <div class="portfolio-desc">
-                        <h3><a href="#">Project 2 Title</a></h3>
-                        <p>Description of project 2</p>
-                    </div>
-                </div>
+  <!-- Main Banner -->
+  <div class="banner" id="banner">
+    <h2>Main Banner Title</h2>
+    <p>This is a description for the banner, featuring some promotional or highlighted content.</p>
+  </div>
 
-            </div>
-        </section>
-    </main>
+  <!-- New This Week Section -->
+  <div class="section">
+    <h2>New This Week</h2>
+    <div class="grid-container">
+      <!-- Grid Item 1 - Viper - Valorant -->
+      <div class="grid-item">
+        <img src="https://i.imgur.com/Nqq2G75.jpg" alt="Viper - Valorant">
+        <div class="info">
+          <h3>Viper - Valorant</h3>
+          <p>Valorant's tactical agent, Viper, arrives with her poison-themed abilities. Get the latest comic featuring Viper!</p>
+        </div>
+      </div>
+      <!-- Add more grid items as needed -->
+    </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 New Website. All Rights Reserved.</p>
-    </footer>
+  <!-- Popular Sets Section -->
+  <div class="section">
+    <h2>Popular Sets</h2>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/250x350" alt="Placeholder">
+        <div class="info">
+          <h3>Popular Set 1</h3>
+          <p>Short description of the popular set.</p>
+        </div>
+      </div>
+      <!-- Add more grid items as needed -->
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Realgreenheart. All rights reserved.</p>
+    <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Use</a>
+  </footer>
+
+  <script>
+    // Array of banner images
+    const images = [
+      "https://i.imgur.com/JgoWmnX.jpg", // First image (your provided URL)
+      "https://i.imgur.com/6alarZY.jpg"  // Second image (your provided URL)
+    ];
+
+    let currentImageIndex = 0;
+
+    function changeBannerImage() {
+      const banner = document.getElementById("banner");
+      banner.style.backgroundImage = `url(${images[currentImageIndex]})`;
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+    }
+
+    // Change image every 5 seconds
+    setInterval(changeBannerImage, 5000);
+
+    // Initialize the first image
+    changeBannerImage();
+  </script>
+
 </body>
 </html>
