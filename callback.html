@@ -29,12 +29,50 @@
 </head>
 <body>
   <h1>Welcome to Realgreenheart</h1>
-  <p>Please log in to access the site content.</p>
-  
-  <!-- Login Button -->
-  <a href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=https://yourusername.github.io/callback.html">
-    <button>Login with Patreon</button>
-  </a>
+  <p>You have been successfully logged in! You can now access the content.</p>
+
+  <script>
+    // Getting the code parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+
+    if (code) {
+      // Make a request to Patreon to exchange the code for an access token
+      const clientId = 'zmhopiFcpHk65cWClQ0tShcS-3Btz6xr9a4ER_yhVzXZlyZUYRrFyMCLLraV_mfp';
+      const clientSecret = '4QBL0nLXqKEgJdRM0JhLIlJonMEwVb2bhe-LQxRYWL1S9vc-kTXcJ3lnvy11R8Bp';
+      const redirectUri = 'https://realgreenheart.github.io/callback.html';
+      
+      // Send POST request to exchange the code for an access token
+      fetch('https://www.patreon.com/api/oauth2/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          'code': code,
+          'client_id': clientId,
+          'client_secret': clientSecret,
+          'redirect_uri': redirectUri,
+          'grant_type': 'authorization_code',
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.access_token) {
+          alert('Login successful! You have been granted access.');
+          // You can now use the access token (data.access_token) for further API requests.
+        } else {
+          alert('Failed to get access token');
+        }
+      })
+      .catch(error => {
+        console.error('Error exchanging code for access token:', error);
+        alert('An error occurred while logging in.');
+      });
+    } else {
+      alert('No authorization code found.');
+    }
+  </script>
 
 </body>
 </html>
