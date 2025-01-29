@@ -164,6 +164,27 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Login Button Styling */
+    .login-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .login-button {
+      background-color: #F0131E; /* Patreon red */
+      color: white;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .login-button:hover {
+      background-color: #d30f1b;
+    }
   </style>
 </head>
 <body>
@@ -181,10 +202,18 @@
     </nav>
   </header>
 
-  <!-- Main Banner -->
+  <!-- Main Banner Section -->
   <div class="banner" id="banner">
     <h2>Main Banner Title</h2>
     <p>This is a description for the banner, featuring some promotional or highlighted content.</p>
+  </div>
+
+  <!-- Patreon Login Button -->
+  <div class="login-container">
+    <h2>Login to Access Content</h2>
+    <a href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=YOUR_CLIENT_ID&redirect_uri=https://yourusername.github.io/callback.html">
+      <button class="login-button">Login with Patreon</button>
+    </a>
   </div>
 
   <!-- New This Week Section -->
