@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,25 +20,25 @@
 
     /* Header for Logo Centered */
     .header-logo {
-      background-color: #202020;
+      background-color: #F0131E; /* Marvel Red */
       padding: 20px 0;
       display: flex;
-      justify-content: center; /* Centers the logo horizontally */
+      justify-content: center;
       align-items: center;
     }
 
     .header-logo img {
-      width: 100px; /* Adjust the size of your logo */
+      width: 100px;
       height: auto;
     }
 
     /* Second Header (Navigation Only) */
     header {
-      background-color: #202020;
+      background-color: #F0131E;
       color: #fff;
       padding: 20px 0;
       display: flex;
-      justify-content: center; /* Centers the header content horizontally */
+      justify-content: center;
       align-items: center;
     }
 
@@ -94,6 +93,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
+      padding: 20px;
     }
 
     .grid-item {
@@ -103,6 +103,11 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
       position: relative;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .grid-item:hover {
+      background-color: #F78F3F;
     }
 
     .grid-item img {
@@ -113,11 +118,12 @@
     .grid-item h3 {
       font-size: 18px;
       margin: 10px 0;
+      color: #000;
     }
 
     .grid-item p {
       font-size: 14px;
-      color: #666;
+      color: #000;
       padding: 0 10px 10px;
     }
 
@@ -163,7 +169,7 @@
 <body>
   <!-- First Header (Logo Only) -->
   <div class="header-logo">
-    <img src="https://imgur.com/seiA8a5.jpg" alt="Realgreenheart Logo"> <!-- Your logo added here -->
+    <img src="https://imgur.com/seiA8a5.jpg" alt="Realgreenheart Logo">
   </div>
 
   <!-- Second Header (Navigation Only) -->
@@ -185,7 +191,6 @@
   <div class="section">
     <h2>New This Week</h2>
     <div class="grid-container">
-      <!-- Grid Item 1 - Viper - Valorant -->
       <div class="grid-item">
         <img src="https://i.imgur.com/Nqq2G75.jpg" alt="Viper - Valorant">
         <div class="info">
@@ -193,7 +198,6 @@
           <p>Valorant's tactical agent, Viper, arrives with her poison-themed abilities. Get the latest comic featuring Viper!</p>
         </div>
       </div>
-      <!-- Add more grid items as needed -->
     </div>
   </div>
 
@@ -208,7 +212,6 @@
           <p>Short description of the popular set.</p>
         </div>
       </div>
-      <!-- Add more grid items as needed -->
     </div>
   </div>
 
@@ -217,28 +220,5 @@
     <p>&copy; 2025 Realgreenheart. All rights reserved.</p>
     <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Use</a>
   </footer>
-
-  <script>
-    // Array of banner images
-    const images = [
-      "https://i.imgur.com/JgoWmnX.jpg", // First image (your provided URL)
-      "https://i.imgur.com/6alarZY.jpg"  // Second image (your provided URL)
-    ];
-
-    let currentImageIndex = 0;
-
-    function changeBannerImage() {
-      const banner = document.getElementById("banner");
-      banner.style.backgroundImage = `url(${images[currentImageIndex]})`;
-      currentImageIndex = (currentImageIndex + 1) % images.length;
-    }
-
-    // Change image every 5 seconds
-    setInterval(changeBannerImage, 5000);
-
-    // Initialize the first image
-    changeBannerImage();
-  </script>
-
 </body>
 </html>
